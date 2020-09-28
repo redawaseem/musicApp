@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import firebase from './firebase';
+// import axios from 'axios';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+library.add(fab, faCheckSquare, faCoffee)
+
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      userInput: "",
+    }
+  }
+
+  componentDidMount() {
+    const dbRef = firebase.database().ref();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        
+        <header>
+          <FontAwesomeIcon icon={['fab', 'apple']} />
+      
+          <h1>"J[A]SON  
+            <div>DERULOOOOO"</div></h1>
+            <p>Tell us what's your favourite jam and why?</p>
+            
+            
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;
