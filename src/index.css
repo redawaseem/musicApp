@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* GENERAL STYLES */
+
+.wrapper {
+  max-width: 1080px; 
+  margin: 0 auto; 
+}
+
+img {
+  max-width: 100%; 
+  height: auto; 
+}
+
+html {
+  font-size: 62.5%; 
+}
+
+/* REMOVAL OF DEFAULT STYLING */
+
+body, 
+h1, 
+h2, 
+h3, 
+p, 
+a {
+  padding: 0; 
+  margin: 0; 
+}
+
+
+/* HEADER STYLES  */
+
+h1 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 8rem;
+  color: #ffd700;
+  /* letter-spacing: 1px; */
+  margin: 0; 
+  /* width: 50%;  */
+  /* text-align: left; */
+}
+
+.jason {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%; 
+}
+
+.title {
+  padding-left: 200px;
+}
+
+header {
+  background: #0f0f0f;
+  height: 80vh;
+}
+
+p {
+  color: gold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.entries {
+  background-color: #ffd700;
+  /* background-color: #0f0f0f; */
+  /* background-color: white; */
+}
+
+/* animation: bounce 3s infinite;  */
