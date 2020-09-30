@@ -48,18 +48,19 @@ h1 {
   font-size: 8rem;
   color: #ffd700;
   /* letter-spacing: 1px; */
-  margin: 0; 
+  margin-left: 140px;
+  padding-top: 50px;
   /* width: 50%;  */
   /* text-align: left; */
 }
 
-.jason {
+/* .jason {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 80%; 
-}
+} */
 
 .title {
   padding-left: 200px;
@@ -70,16 +71,99 @@ header {
   height: 80vh;
 }
 
-p {
-  color: gold;
+h2 {
+  color: #ffd700;
   font-size: 2rem;
   text-align: center;
+  margin-top: 40px;
+
 }
 
+.icon {
+  display: flex; 
+  justify-content: center;
+  align-items: flex-end;
+  height: 130px; 
+}
+
+.fa-caret-square-down {
+  color: #ffd700;
+  font-size: 50px;
+}
+
+.fa-caret-square-down:hover {
+  cursor: pointer;
+}
+
+.bounce {
+	-webkit-animation: bounce 2s;
+	        animation: bounce 2s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+		        transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-12px);
+		        transform: translateY(-12px);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+		        transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-12px);
+		        transform: translateY(-12px);
+	}
+}
+
+.submit {
+  display: flex; 
+  flex-direction: column;
+}
+
+
 .entries {
-  background-color: #ffd700;
-  /* background-color: #0f0f0f; */
+  /* background-color: #ffd700; */
+  background-color: #0f0f0f;
   /* background-color: white; */
 }
 
+.list {
+  background: url(./iphoneVectorBlack.png);
+}
 /* animation: bounce 3s infinite;  */
+
+input {
+  width: 500px;
+  height: 500px;
+}
+
+textarea {
+  border-radius: 10px;
+  box-shadow: #fed700 10px 10px;
+  border: none;
+}
