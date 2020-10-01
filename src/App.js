@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import firebase from './firebase';
-// import axios from 'axios';
-import iphoneVector from './iphoneVector.png';
-import iphoneVectorOne from './iphoneVectorBlack.png';
-import iphoneVectorTwo from './iphoneVectorWhite.png';
-import iphoneVectorThree from './iphoneVectorYellow.png';
+// Import of firebase Component
+import firebase from './Components/firebase';
+// Import Header Component
+import Header from './Components/Header';
+// Import Footer Component
+import Footer from './Components/Footer';
+// Import of iphones holding user input information
+import iphoneVectorMain from './iphoneVectorMain.png';
+// Import of error styling 
+import swal from 'sweetalert';
 
 
 class App extends Component {
@@ -14,9 +18,11 @@ class App extends Component {
     super();
     this.state = {
       // Store user input to track new state: 
-      userInput: "",
+      userInput: '',
       datas: [],
     }
+    // Scroll reference
+    this.myRef = React.createRef();
   }
 
   // Create a firebase reference: 
@@ -50,17 +56,32 @@ class App extends Component {
     })
   }
 
+  // Function created for scroll from "let's jam" button to entry
+  scrollToMyRef = () => {
+    window.scrollTo(0, this.myRef.current.offsetTop)
+  }
+
+
   // Stop page refresh, take user input and store it into Firebase and then reset the input field:
   handleClick = (event) => {
     event.preventDefault();
-    // Open portal to Firebase
-    const dbRef = firebase.database().ref();
-    // Add new record to Firebase
-    dbRef.push(this.state.userInput);
-    // Reset input field
-    this.setState({
-      userInput:'',
-    });
+
+    // Error handling for empty textarea
+    if (this.state.userInput !== '') {
+      // Open portal to Firebase
+      const dbRef = firebase.database().ref();
+      // Add new record to Firebase
+      dbRef.push(this.state.userInput);
+      // Reset input field
+      this.setState({
+        userInput:'',
+      });
+      // Calling the scroll function 
+      this.scrollToMyRef()
+
+    } else {
+      swal('Wait a sec! We wanna dance too! Please write your answer to the question in the box!')
+    }
   };
 
   // STRETCH GOAL: Removal of entry
@@ -72,63 +93,49 @@ class App extends Component {
     dbRef.child(dataKey).remove(); 
   }
 
-
   render() {
     return (
       <div className="App">
         
-        <header>
-          <div className="jason wrapper">
-            <h1><em>“J[A]SON  
-              <div className="title">DERULOOOOO"</div></em></h1>
-              <h2>Tell us what's your favourite jam and why?</h2>
-              <div className="icon">
-                <i className="bounce far fa-caret-square-down"></i>
-              </div>
-          </div>
-        </header>
-
-        {/* <section className="form">
-          <div className="wrapper">
-            <form>
-              <textarea name="" id="" value={this.state.input} onChange={this.handleChange}>
-              </textarea>
-              <button className="record">
-                Record it! 
-              </button>
-            </form>
-          </div>
-        </section> */}
+        <Header />
 
         <section className="entries">
           <div className="wrapper">
+            <form className="submit" action="">
+              
+              <label htmlFor="newEntry">Add the jam!</label>
+              
+              <textarea id="newJam" onChange={this.handleChange} value={this.state.userInput}></textarea>
+              
+              <button className="jam" onClick={this.handleClick}>LET'S JAM!</button>
 
-          <form className="submit" action="submit">
-            <label htmlFor="newEntry">Add the jam!</label>
-            <textarea id="newJam" onChange={this.handleChange} value={this.state.userInput}></textarea>
-            <button onClick={this.handleClick}>LET'S JAM!</button>
-          </form>
-            {/* Display entries */}
-            <ul>
-              {this.state.datas.map((data) => {
-                return(
-                  <div className="list">
-                  <li key={data.key}>
-                    <p>{data.jam}</p>
-                    {/* Button to delete user input */}
-                    <button onClick={() => this.handleRemove(data.key)}><span role="img" aria-label="delete emoji">❌</span></button>
-                  </li>
-                </div>
-                )
-              })
-            }
-          </ul>
-          <img src={iphoneVector} alt="Logo" />;
-            <img src={iphoneVectorOne} alt="Logo" />;
-            <img src={iphoneVectorTwo} alt="Logo" />;
-            <img src={iphoneVectorThree} alt="Logo" />;
+            </form>
+
+              <ul ref={this.myRef} className="listOfEntries">
+                {this.state.datas.map((data) => {
+                  return(
+                    <li className ="listStyle" key={data.key}>
+
+                      <div className="container">
+                        <div className="bottom">
+                          <img className="iphone" src={iphoneVectorMain} alt="iphone" />
+                        </div>
+
+                        <div className="top">
+                          <div onClick={() => this.handleRemove(data.key)}><i class="fas fa-trash"></i><span className="remove"> Click to Remove</span></div>
+                          <p className="userAnswer">{data.jam}</p>
+                        </div>
+                      </div>
+
+                    </li>
+                  )
+                })}
+              </ul>
           </div>
         </section>
+
+        <Footer />
+
       </div>
     );
   }

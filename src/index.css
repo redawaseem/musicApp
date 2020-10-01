@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -21,11 +21,11 @@ code {
 
 img {
   max-width: 100%; 
-  height: auto; 
 }
 
 html {
   font-size: 62.5%; 
+  scroll-behavior: smooth;
 }
 
 /* REMOVAL OF DEFAULT STYLING */
@@ -42,48 +42,32 @@ a {
 
 
 /* HEADER STYLES  */
+header {
+  background-image: url(./assets/charcoalBackground.jpg);
+  height: 80vh;
+}
 
 h1 {
   font-family: 'Secular One', sans-serif;
   font-size: 8rem;
   color: #ffd700;
-  /* letter-spacing: 1px; */
-  margin-left: 140px;
   padding-top: 50px;
-  /* width: 50%;  */
-  /* text-align: left; */
-}
-
-/* .jason {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 80%; 
-} */
-
-.title {
-  padding-left: 200px;
-}
-
-header {
-  background: #0f0f0f;
-  height: 80vh;
+  text-shadow: 3px 3px #fff2ba; 
+  text-align: center;
+  font-style: italic;
 }
 
 h2 {
+  font-family: 'Secular One', sans-serif;
   color: #ffd700;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
   margin-top: 40px;
-
 }
 
 .icon {
-  display: flex; 
-  justify-content: center;
-  align-items: flex-end;
-  height: 130px; 
+  margin: 40px auto;
+  text-align: center;
 }
 
 .fa-caret-square-down {
@@ -91,10 +75,7 @@ h2 {
   font-size: 50px;
 }
 
-.fa-caret-square-down:hover {
-  cursor: pointer;
-}
-
+/* This animation has been retrieved from https://techstacker.com/how-to-animate-a-bouncing-svg-icon-with-css/ */
 .bounce {
 	-webkit-animation: bounce 2s;
 	        animation: bounce 2s;
@@ -139,23 +120,18 @@ h2 {
 		        transform: translateY(-12px);
 	}
 }
+/* End of animation retrieval */
+
+
+/* SECTION: TEXTAREA FOR USER INPUT STYLING  */
+.entries {
+  background-image: url(./assets/charcoalBackground.jpg);
+}
 
 .submit {
   display: flex; 
   flex-direction: column;
 }
-
-
-.entries {
-  /* background-color: #ffd700; */
-  background-color: #0f0f0f;
-  /* background-color: white; */
-}
-
-.list {
-  background: url(./iphoneVectorBlack.png);
-}
-/* animation: bounce 3s infinite;  */
 
 input {
   width: 500px;
@@ -165,5 +141,183 @@ input {
 textarea {
   border-radius: 10px;
   box-shadow: #fed700 10px 10px;
+  background-color: #fff2ba;
   border: none;
+  resize: none;
+  height: 200px;
+  padding: 20px;
+  font-family: 'Secular One', sans-serif; 
+}
+
+/* LET'S JAM BUTTON STYLING */
+.jam {
+  border: none;
+  border-radius: 10px;
+  width: 25%; 
+  display: block;
+  margin: 40px auto;
+  padding: 20px 40px;
+  background-color: #fff2ba;
+  box-shadow: #fed700 10px 10px;
+  cursor: pointer;
+  font-family: 'Secular One', sans-serif;
+  font-size: 2rem;
+}
+
+.jam:active,
+.jam:hover,
+.jam:focus {
+  background-color:#fed700;
+}
+
+/* STYLING OF USER OUTPUT */
+.listOfEntries {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; 
+  justify-content: space-around;
+  padding-left: 0;
+  margin: 0px;
+}
+
+.listStyle {
+  list-style: none;
+  width: calc((100%/3) - 20px);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom {
+    margin: 20px 0px;
+}
+
+.userAnswer {
+  font-size: 2rem;
+  font-family: 'Secular One', sans-serif;
+  line-height: 50px;
+}
+
+.top {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    height: 50%;
+    margin: 40px;
+    overflow: auto;
+}
+
+/* REMOVE ENTRIES STYLING */
+
+.fa-trash {
+  font-size: 20px;
+}
+
+.fa-trash:active,
+.fa-trash:hover,
+.fa-trash:focus {
+  color:red;
+  cursor: pointer;
+}
+
+.remove {
+  font-size: 10px;
+  font-family: 'Secular One', sans-serif;
+  padding-left: 5px;
+}
+
+/* FOOTER STYLES */
+
+footer {
+  background-color:  #fed700;
+  font-family: 'Secular One', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1080px) {
+  textarea {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 940px) {
+  h1 {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .userAnswer {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jam {
+    width: 50%;
+  }
+
+  .top {
+    top: 20px;
+    margin: 20px;
+    width: 80%;
+  }
+
+  .fa-trash {
+    font-size: 15px;
+  }
+
+  .remove {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    height: 60vh; 
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-shadow: 1.5px 1.5px #fff2ba;
+  }
+
+  .userAnswer {
+    font-size: 8px;
+    line-height: 15px;
+  }
+
+  .top {
+    top: 20px;
+    margin: 20px;
+    width: 60%;
+    height: 40%;
+  }
+
+  .fa-trash {
+    font-size: 10px;
+  }
+
+  .remove {
+    font-size: 4px;
+  }
 }
