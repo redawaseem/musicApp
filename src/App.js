@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 // Import of firebase Component
-import firebase from './Components/firebase';
+import firebase from './firebase';
 // Import Header Component
 import Header from './Components/Header';
 // Import Footer Component
@@ -103,9 +103,9 @@ class App extends Component {
           <div className="wrapper">
             <form className="submit" action="">
               
-              <label htmlFor="newEntry">Add the jam!</label>
+              <label htmlFor="newEntry"></label>
               
-              <textarea id="newJam" onChange={this.handleChange} value={this.state.userInput}></textarea>
+              <textarea placeholder="Write your favourite song here..." id="newJam" onChange={this.handleChange} value={this.state.userInput}></textarea>
               
               <button className="jam" onClick={this.handleClick}>LET'S JAM!</button>
 

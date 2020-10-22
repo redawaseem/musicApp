@@ -1,34 +1,316 @@
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER STYLES  */
+header {
+  background-image: url(./assets/charcoalBackground.jpg);
+  height: 80vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.jason {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 80vh;
+}
+
+h1 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 8rem;
+  color: #ffd700;
+  padding-top: 50px;
+  text-shadow: 3px 3px #fff2ba; 
+  text-align: center;
+  font-style: italic;
+}
+
+h2 {
+  font-family: 'Secular One', sans-serif;
+  color: #ffd700;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+  width: 80%;
+}
+
+.icon {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.fa-caret-square-down {
+  color: #ffd700;
+  font-size: 50px;
+}
+
+.bounce {
+	-webkit-animation: bounce 2s;
+	        animation: bounce 2s;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+		        transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-12px);
+		        transform: translateY(-12px);
+	}
+}
+
+@keyframes bounce {
+	0%,
+	25%,
+	50%,
+	75%,
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-20px);
+		        transform: translateY(-20px);
+	}
+	60% {
+		-webkit-transform: translateY(-12px);
+		        transform: translateY(-12px);
+	}
+}
+
+/* SECTION: TEXTAREA FOR USER INPUT STYLING  */
+.entries {
+  background-image: url(./assets/charcoalBackground.jpg);
+}
+
+.submit {
+  display: flex; 
+  flex-direction: column;
+  padding: 40px;
+}
+
+input {
+  width: 500px;
+  height: 500px;
+}
+
+textarea {
+  border-radius: 10px;
+  box-shadow: #fed700 10px 10px;
+  background-color: #fff2ba;
+  border: none;
+  resize: none;
+  height: 200px;
+  padding: 20px;
+  font-family: 'Secular One', sans-serif; 
+  font-size: 15px;
+}
+
+/* LET'S JAM BUTTON STYLING */
+.jam {
+  border: none;
+  border-radius: 10px;
+  display: block;
+  margin: 40px auto;
+  padding: 20px 60px;
+  background-color: #fff2ba;
+  box-shadow: #fed700 10px 10px;
+  cursor: pointer;
+  font-family: 'Secular One', sans-serif;
+  font-size: 2rem;
+}
+
+.jam:active,
+.jam:hover,
+.jam:focus {
+  background-color:#fed700;
+}
+
+/* STYLING OF USER OUTPUT */
+.listOfEntries {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%; 
+  justify-content: space-around;
+  padding-left: 0;
+  margin: 0px;
+}
+
+.listStyle {
+  list-style: none;
+  width: calc((100%/3) - 20px);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom {
+    margin: 20px 0px;
+}
+
+.userAnswer {
+  font-size: 2rem;
+  font-family: 'Secular One', sans-serif;
+  line-height: 50px;
+}
+
+.top {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    height: 50%;
+    margin: 40px;
+    overflow: auto;
+}
+
+/* REMOVE ENTRIES STYLING */
+
+.fa-trash {
+  font-size: 20px;
+}
+
+.fa-trash:active,
+.fa-trash:hover,
+.fa-trash:focus {
+  color:red;
+  cursor: pointer;
+}
+
+.remove {
+  font-size: 10px;
+  font-family: 'Secular One', sans-serif;
+  padding-left: 5px;
+}
+
+/* FOOTER STYLES */
+
+footer {
+  background-color:  #fed700;
+  font-family: 'Secular One', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* MEDIA QUERIES */
+@media (max-width: 1080px) {
+  textarea {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 940px) {
+  h1 {
+    font-size: 6.5rem;
+    padding-top: 0px;
   }
-  to {
-    transform: rotate(360deg);
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .jason {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 100vh;
+  }
+
+  .userAnswer {
+    line-height: 35px;
+  }
+
+  h1 {
+    width: 80%;
+    font-size: 6rem;
+  }
+
+  .listStyle {
+    width: calc((100%/2) - 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  .jason {
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 16px; 
+  }
+
+  .top {
+    top: 50px;
+    left: 10px;
+    width: 75%;
+  }
+
+  .remove {
+    font-size: 12px;
+  }
+
+  .listStyle {
+    width: calc(100% - 100px);
+  }
+}
+
+@media (max-width: 320px) {
+  .jason {
+    height: 100vh;
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-shadow: 1.5px 1.5px #fff2ba;
+  }
+
+  .userAnswer {
+    font-size: 8px;
+    line-height: 15px;
+  }
+
+  .top {
+    top: 20px;
+    margin: 20px;
+    width: 60%;
+    height: 40%;
+  }
+
+  .fa-trash {
+    font-size: 10px;
+  }
+
+  .remove {
+    font-size: 4px;
   }
 }

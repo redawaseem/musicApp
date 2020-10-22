@@ -6,7 +6,7 @@ class Header extends Component {
             <header>
                 <div className="jason wrapper">
                     <h1>“IS THIS THE REAL LIFE?<div className="title">IS THIS JUST FANTASY?"</div></h1>
-                    <h2>What's your favourite song and why?</h2>
+                    <h2>Ever curious to learn about other people's favourite songs? Now's your chance! Share your favourite song below and scroll down to see it posted along with other entries!</h2>
                 <div className="icon">
                     <i className="bounce far fa-caret-square-down"></i>
                 </div>
