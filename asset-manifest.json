@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/musicApp/static/css/main.08035060.chunk.css",
+    "main.js": "/musicApp/static/js/main.950b83f4.chunk.js",
+    "main.js.map": "/musicApp/static/js/main.950b83f4.chunk.js.map",
+    "runtime-main.js": "/musicApp/static/js/runtime-main.0cfba719.js",
+    "runtime-main.js.map": "/musicApp/static/js/runtime-main.0cfba719.js.map",
+    "static/js/2.2d245571.chunk.js": "/musicApp/static/js/2.2d245571.chunk.js",
+    "static/js/2.2d245571.chunk.js.map": "/musicApp/static/js/2.2d245571.chunk.js.map",
+    "index.html": "/musicApp/index.html",
+    "precache-manifest.d5c8c83f781b8f1281757859bc537d4c.js": "/musicApp/precache-manifest.d5c8c83f781b8f1281757859bc537d4c.js",
+    "service-worker.js": "/musicApp/service-worker.js",
+    "static/css/main.08035060.chunk.css.map": "/musicApp/static/css/main.08035060.chunk.css.map",
+    "static/js/2.2d245571.chunk.js.LICENSE.txt": "/musicApp/static/js/2.2d245571.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/musicApp/static/media/charcoalBackground.f8ca2951.jpg",
+    "static/media/iphoneVectorMain.png": "/musicApp/static/media/iphoneVectorMain.c3dc5e21.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cfba719.js",
+    "static/js/2.2d245571.chunk.js",
+    "static/css/main.08035060.chunk.css",
+    "static/js/main.950b83f4.chunk.js"
+  ]
+}
